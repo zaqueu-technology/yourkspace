@@ -23,17 +23,9 @@
   transition: transform 0.67s;
 }
 
-@keyframes coffee {
-  50% {
-    transform: translateY(-6px);
-  }
-  to {
-      transform: translateY(0); /* Mantém a posição final */
-  }
-}
-.header-item:hover .bxs-coffee{
-  transition: transform 0.67s;
-  animation: coffee 0.67s forwards;
+.header-container:hover .bxs-coffee{
+  transition: transform 0.3s;
+  transform: translateY(-4px);
 }
 .title{
   grid-area: header;
@@ -56,6 +48,36 @@
 
 .main{
   grid-area: content;
+}
+.dashboard-container{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 0.5fr 4fr 0.5fr;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas: 
+  
+  "header header"
+  "main-left main-right"
+  "footer-left footer-right"
+  
+  ;
+}
+.dashboard-header{
+  grid-area: header;
+}
+.dashboard-left{
+  grid-area: main-left;
+}
+.dashboard-right{
+  grid-area: main-right;
+}
+.dashboard-footer-left{
+  grid-area: footer-left;
+}
+.dashboard-footer-right{
+  grid-area: footer-right;
 }
 
 .aside{
