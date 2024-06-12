@@ -1,7 +1,7 @@
 export let darkModeEnabled = false;
 export function enableDarkMode(){
   if(!darkModeEnabled){
-    const elements = document.querySelectorAll('main, aside, header, footer, button');
+    const elements = document.querySelectorAll('main, aside, header, footer, button, body');
     elements.forEach( element =>{
       element.classList.add('dark-mode');
     })
@@ -11,7 +11,7 @@ export function enableDarkMode(){
     });
     darkModeEnabled = true;
   } else{
-    const elements = document.querySelectorAll('main, aside, header, footer, button');
+    const elements = document.querySelectorAll('main, aside, header, footer, button, body');
     elements.forEach(element =>{
       element.classList.remove('dark-mode');
     })
