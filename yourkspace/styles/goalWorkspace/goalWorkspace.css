@@ -1,0 +1,46 @@
+.goal-workspace-title{
+  font-size: 50px;
+}
+.goals-workspace-end-date{
+  height: 10%;
+  font-size: 10px;
+}
+.goal-workspace-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 80%;
+  width: 100%;
+  font-size: 23px;
+  text-align: justify;
+  word-wrap: break-all;
+}
+.goal-workspace-text{
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 500px;
+  height: 300px;
+  word-wrap: break-word;
+  overflow-y: auto;
+}
+.goal-workspace-button-container{
+  background-color: blueviolet;
+  color: aliceblue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  
+  height: 100px;
+  width: 10%;
+}
+.goal-workspace-button{
+  border: none;
+  background-color: blueviolet;
+  color: aliceblue;
+  font-size: 40px;
+}

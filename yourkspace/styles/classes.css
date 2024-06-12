@@ -116,7 +116,10 @@
   flex-shrink: 0;
   margin: 10px;
 }
-
+.dashboard-circle:hover{
+  background-color: rgb(242, 242, 242);
+  cursor: pointer;
+}
 .dashboard-footer{
   grid-area: footer;
   width: 100%;
