@@ -1,31 +1,17 @@
-.goal-workspace-title{
+.todo-workspace-title{
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 50px;
   width: 100%;
 }
-.goal-title-text{
+.todo-title-text{
   width: 100%;
   align-items: center;
   text-align: center;
 }
-.bx-left-arrow-circle{
-  margin-left: 5px;
-  display: inline-block;
-  font-size: 40px;
-  color: rgb(170, 87, 248);
-}
-.bx-left-arrow-circle:hover{
-  transform: translateX(3px);
-  color: rgb(170, 100, 150);
-  cursor: pointer;
-}
-.goals-workspace-end-date{
-  height: 10%;
-  font-size: 10px;
-}
-.goal-workspace-content{
+
+.todo-workspace-content{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,18 +22,7 @@
   word-wrap: break-all;
   flex-shrink: 0;
 }
-.goal-workspace-text{
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 500px;
-  height: 300px;
-  word-wrap: break-word;
-  overflow-y: auto;
-}
-.goal-workspace-button-container{
+.todo-workspace-button-container{
   color: aliceblue;
 
   display: flex;
@@ -60,19 +35,38 @@
 
   transition: transform 0.2s ease;
 }
-.goal-workspace-button{
+.todo-workspace-button{
   border: none;
   font-size: 40px;
   color: rgb(170, 87, 248); 
 }
-.next-button:hover{
+.todo-workspace-text{
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 500px;
+  height: 300px;
+  word-wrap: break-word;
+  overflow-y: auto;
+}
+.todo-workspace-text:hover{
+  cursor: pointer;
+}
+.todo-workspace-text-removed{
+  text-decoration: line-through;
+  color: grey;
+}
+
+.todo-next-button:hover{
   transform: translateX(-4px);
   cursor: pointer;
   background-color: rgb(213, 215, 217);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-.back-button:hover{
+.todo-back-button:hover{
   transform: translateX(4px);
   cursor: pointer;
   background-color: rgb(213, 215, 217);

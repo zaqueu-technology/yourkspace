@@ -103,6 +103,8 @@
 }
 .dashboard-right{
   grid-area: main-right;
+  margin: 0px;
+  padding: 0px;
 }
 .dashboard-circle{
   display: flex;
@@ -117,7 +119,7 @@
   margin: 10px;
 }
 .dashboard-circle:hover{
-  background-color: rgb(242, 242, 242);
+  background-color: rgb(217, 216, 216);
   cursor: pointer;
 }
 .dashboard-footer{
