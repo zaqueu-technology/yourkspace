@@ -36,6 +36,19 @@
   word-wrap: break-all;
   flex-shrink: 0;
 }
+.goals{
+  width: 100px;
+  height: 44px;
+  text-align: center;
+}
+.goals:hover{
+  cursor: pointer;
+}
+.add-goal-dashboard-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .goal-workspace-text{
   display: flex;
   align-items: center;
@@ -46,6 +59,13 @@
   height: 300px;
   word-wrap: break-word;
   overflow-y: auto;
+}
+.goal-workspace-text:hover{
+  cursor: pointer;
+}
+.goal-workspace-text-removed{
+  text-decoration: line-through;
+  color: grey;
 }
 .goal-workspace-button-container{
   color: aliceblue;

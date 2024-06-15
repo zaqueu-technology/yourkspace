@@ -58,6 +58,17 @@
   text-decoration: line-through;
   color: grey;
 }
+.to-do{
+  width: 100px;
+  height: 44px;
+  text-align: center;
+}
+.to-do:hover{
+  cursor: pointer;
+}
+.add-todo:hover{
+  cursor: pointer;
+}
 
 .todo-next-button:hover{
   transform: translateX(-4px);
