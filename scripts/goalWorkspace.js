@@ -87,7 +87,8 @@ export function showGoalDashboard(){
   const container = document.querySelector('.dashboard-left');
   container.innerHTML = `
     <div class="dashboard-circle">${howManyGoals()}</div>
-    <div class="goals">goals</div>`;
+    <div class="goals">goals</div>
+    <div>a</div>`;
     const goalButton = document.querySelector('.dashboard-circle');
     goalButton.addEventListener('click', showGoalWorkspace);
     const goalsList = document.querySelector('.goals');
