@@ -1,5 +1,5 @@
 import { showGoalDashboard } from "./goalWorkspace.js";
-import { limitCharactersToDo, resetToDoCont, resetGoalCont } from "./darkMode.js";
+import { charactersLimit } from "./darkMode.js";
 
 let currentPosition = 0;
 
@@ -26,11 +26,14 @@ function showText(element){
 }
 
 function addToDo(title, content){
-  toDoArr.push(new ToDo(title.value, content.value));
-  showToDoDashboard();
+  if((title.value != '') && (content.value != '')){
+    toDoArr.push(new ToDo(title.value, content.value));
+    showToDoDashboard();
+    console.log('OK');
+  }else{
+    console.log('NOT OK');
+  }
 
-  resetToDoCont();
-  resetGoalCont();
   localStorage.removeItem('todo')
   localStorage.setItem('todo', JSON.stringify(toDoArr));
 }
@@ -48,7 +51,7 @@ function showToDoList(){
   closeTab.addEventListener('click', showToDoDashboard);
   const todoTitleNew = document.querySelector('.title-new-item-content');
   todoTitleNew.addEventListener('keydown', event =>{
-    limitCharactersToDo(event);
+    charactersLimit(todoTitleNew.value, event);
   })
   const todoContentNew = document.querySelector('.todo-content-new');
  
@@ -85,7 +88,6 @@ export function showToDoDashboard(){
     const todoList = document.querySelector('.to-do');
     todoList.addEventListener('click', ()=>{
       showToDoList()
-      resetToDoCont();
       showGoalDashboard();
     });
     todoList.addEventListener('mouseover', ()=>{
@@ -110,7 +112,6 @@ export function showToDoWorkspace(){
         ${showText(toDoArr[currentPosition])}
       <div class="todo-workspace-button-container todo-next-button"><div class="todo-workspace-button"><i class='bx bx-right-arrow-alt'></i></div></div>
     </div>
-    <div class="todo-workspace-end-date">s</div>
   `;
 
   const backButton = document.querySelector('.todo-back-button');

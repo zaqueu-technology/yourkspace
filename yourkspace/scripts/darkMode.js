@@ -66,3 +66,11 @@ export function limitCharactersToDo(event){
 export function resetToDoCont(){
   todoCont = 0;
 }
+
+export function charactersLimit(element, event){
+  if((element.length >= 15) && (event.key != 'Backspace')){
+    event.preventDefault();
+  }else{
+    console.log(element.length);
+  }
+}

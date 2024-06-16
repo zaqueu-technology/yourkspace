@@ -1,5 +1,5 @@
 import { showToDoDashboard } from "./todoWorkspace.js";
-import { limitCharactersGoal, resetGoalCont, resetToDoCont } from "./darkMode.js";
+import { charactersLimit } from "./darkMode.js";
 
 let currentPosition = 0;
 
@@ -41,11 +41,15 @@ if(JSON.parse(localStorage.getItem('goal') !== null)){
 }
 
 function addGoal(title, content, date){
-  goals.push(new Goal(title.value, content.value, date.value));
-  showGoalDashboard();
+  if((title.value != '') && (content.value != '') && (date.value != '')){
+    goals.push(new Goal(title.value, content.value, date.value));
+    showGoalDashboard();
+    console.log('goal ok');
+  }else{
+    console.log('goal not ok');
+  }
+  
 
-  resetGoalCont();
-  resetToDoCont();
   localStorage.removeItem('goal')
   localStorage.setItem('goal', JSON.stringify(goals));
 }
@@ -56,15 +60,18 @@ function showGoalsList(){
     <div class='new-item'>
       <div class='title-new-item goal-title-new'><input type='text' placeholder='Enter title' class='title-new-item-content'><div class='close-tab goal-close'>x</div></div>
       <textarea class='content-new-item goal-content-new'></textarea>
-      <input type='date' class='final-date-item'>
+      <input type='date' class='final-date-item' required>
     </div>
     <button class="add-new-item add-goal">Add</button>
   `;
   const closeTab = document.querySelector('.goal-close');
   closeTab.addEventListener('click', showGoalDashboard);
   const goalTitleNew = document.querySelector('.title-new-item-content');
+  
   goalTitleNew.addEventListener('keydown', event =>{
-    limitCharactersGoal(event);
+    let titleText = goalTitleNew.value;
+    console.log(titleText);
+    charactersLimit(titleText, event);
   })
   const goalContentNew = document.querySelector('.goal-content-new');
   const goalDateNew = document.querySelector('.final-date-item');
@@ -86,7 +93,6 @@ export function showGoalDashboard(){
     const goalsList = document.querySelector('.goals');
     goalsList.addEventListener('click', ()=>{
       showGoalsList();
-      resetGoalCont();
       showToDoDashboard();
     });
     goalsList.addEventListener('mouseover', ()=>{
